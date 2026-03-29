@@ -1,0 +1,42 @@
+.lang-chart { display: flex; flex-direction: column; gap: 20px; }
+
+.lang-chart__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.lang-chart__chart { max-height: 260px; }
+
+.lang-chart__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lang-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+}
+
+.lang-pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lang-pill__name {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.lang-pill__pct {
+  font-size: 11px;
+  color: var(--text-muted);
+}

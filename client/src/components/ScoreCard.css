@@ -1,0 +1,137 @@
+.scorecard { display: flex; flex-direction: column; gap: 24px; }
+
+.scorecard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scorecard__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.scorecard__main {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Circular ring */
+.circular-ring {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ring-progress {
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ring-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.ring-score {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ring-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Stat chips */
+.scorecard__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.stat-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.stat-chip__value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-2);
+  line-height: 1;
+}
+
+.stat-chip__label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Category bars */
+.scorecard__categories {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.category-bar {}
+
+.category-bar__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.category-bar__icon { font-size: 14px; }
+
+.category-bar__label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.category-bar__weight {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.category-bar__score {
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 28px;
+  text-align: right;
+}
+
+.category-bar__track {
+  height: 6px;
+  background: var(--bg-3);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.category-bar__fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
