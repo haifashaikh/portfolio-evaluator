@@ -9,15 +9,28 @@ const Report = require('./models/Report');
 
 const app = express();
 
+const getAllowedOrigins = () => {
+  const deployedClientUrl = process.env.CLIENT_URL
+    ? process.env.CLIENT_URL.replace(/[\r\n]/g, '').trim()
+    : '';
+
+  return [
+    deployedClientUrl,
+    'http://localhost:5173',
+    'http://localhost:5174',
+  ].filter(Boolean);
+};
+
 // ── Connect to MongoDB ────────────────────────────────────────────────────────
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: getAllowedOrigins(),
     optionsSuccessStatus: 200,
   })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
